@@ -2,32 +2,52 @@
 # Autor: Manuel A. García
 # Descripción: Calculadora de gastos mensuales en consola
 
-def pedir_cantidad_gastos(): # Función para pedir al usuario la cantidad de gastos que va a introducir
+def pedir_cantidad_gastos():
     return int(input("¿Cuántos gastos vas a introducir? "))
 
-def pedir_gasto(i): # Función para pedir al usuario que introduzca los gastos
-    return float(input(f"Introduce el gasto número {i}: "))
+def pedir_gasto(i):
+    categoria = input(f"Gasto {i} - Introduce la categoría: ").strip().lower()
+    importe = float(input(f"Gasto {i} - Introduce el importe en euros: "))
+    return {"categoria": categoria, "importe": importe}
 
-def calcular_total(lista_gastos): # Función para sumar todos los gastos
-    return sum(lista_gastos)
+def calcular_total(gastos):
+    return sum(gasto["importe"] for gasto in gastos)
 
-def mostrar_resultado(total): # Función para mostrar el total
+def calcular_total_por_categoria(gastos):
+    totales = {}
+    for gasto in gastos:
+        categoria = gasto["categoria"]
+        importe = gasto["importe"]
+        if categoria in totales:
+            totales[categoria] += importe
+        else:
+            totales[categoria] = importe
+    return totales
+
+def mostrar_resultado(total):
     print(f"\nHas gastado un total de {total:.2f} €")
-    if total > 1000: # Si los gastos superan los 1000 € se muestra mensaje de advertencia
+    if total > 1000:
         print("¡Cuidado! Has superado los 1000 €.")
 
-def main():  # Esta es la función principal, la que dirige todo
-    gastos = []  # Creamos una lista vacía para los gastos
-    cantidad = pedir_cantidad_gastos()  # Llamamos a la función que pide cuántos gastos vas a meter
+def mostrar_resultado_por_categoria(totales):
+    print("\nGastos por categoría:")
+    for categoria, total in totales.items():
+        print(f"- {categoria.capitalize()}: {total:.2f} €")
 
-    for i in range(1, cantidad + 1):  # Bucle para pedir cada gasto uno por uno
+def main():
+    gastos = []
+    cantidad = pedir_cantidad_gastos()
+
+    for i in range(1, cantidad + 1):
         gasto = pedir_gasto(i)
         gastos.append(gasto)
 
-    total = calcular_total(gastos)  # Sumamos todos los gastos
-    mostrar_resultado(total)  # Mostramos el resultado por pantalla
+    total = calcular_total(gastos)
+    mostrar_resultado(total)
 
+    totales_categoria = calcular_total_por_categoria(gastos)
+    mostrar_resultado_por_categoria(totales_categoria)
 
-# Si este archivo es el que se está ejecutando, entonces se ejecuta la función main
 if __name__ == "__main__":
     main()
+
