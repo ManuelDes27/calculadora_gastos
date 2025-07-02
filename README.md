@@ -1,21 +1,24 @@
-# Calculadora de Gastos - Versión 1.1
+# 💸 Calculadora de Gastos Mensuales
 
-Este proyecto es una calculadora de gastos mensuales desarrollada en Python.  
-Permite al usuario ingresar varios gastos, sumar los totales y mostrar alertas si se supera un límite establecido.
+Proyecto en Python que permite gestionar los gastos personales de forma sencilla desde la terminal. El objetivo es practicar y consolidar el uso de:
 
-## Funcionalidades
+- Listas y diccionarios
+- Condicionales y bucles
+- Funciones personalizadas
+- Manejo de archivos JSON
+- Organización modular del código
 
-- Añadir múltiples gastos.
-- Calcular el total de gastos.
-- Alertar si los gastos superan los 1000 €.
-- Uso de funciones para modular el código.
+## 🧠 ¿Qué hace esta calculadora?
 
-## Cómo usar
+La aplicación permite:
 
-1. Clona o descarga este repositorio.
-2. Ejecuta el archivo `calculadora_gastos_v1.1.py`.
-3. Introduce el número de gastos y luego cada gasto individual.
-4. Visualiza el total y posibles alertas.
+1. Añadir nuevos gastos (categoría + importe)
+2. Guardar los gastos automáticamente en un archivo `gastos.json`
+3. Ver la lista completa de gastos introducidos
+4. Ver el total gastado
+5. Ver el gasto total por categoría
+6. Advertir si se ha superado un umbral (ej. 1000 €)
+7. Mantener los datos entre ejecuciones gracias a la persistencia con JSON
 
 ## Requisitos
 
