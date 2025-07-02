@@ -1,34 +1,23 @@
-# 💸 Calculadora de Gastos Mensuales
+# Calculadora de Gastos Mensuales - Versión 1.7
 
-Proyecto en Python que permite gestionar los gastos personales de forma sencilla desde la terminal. El objetivo es practicar y consolidar el uso de:
+## Descripción
+Calculadora de gastos mensuales en consola desarrollada en Python. Permite al usuario añadir, editar, eliminar y visualizar gastos, categorizarlos y almacenarlos en un archivo JSON para persistencia de datos. Incluye funcionalidades para mostrar totales generales y por categoría, y validación de entradas.
 
-- Listas y diccionarios
-- Condicionales y bucles
-- Funciones personalizadas
-- Manejo de archivos JSON
-- Organización modular del código
+## Características principales
+- Añadir gastos con categoría e importe.
+- Mostrar lista de gastos detallada.
+- Calcular y mostrar total gastado.
+- Calcular y mostrar total por categoría.
+- Editar gastos existentes.
+- Eliminar gastos.
+- Guardar y cargar gastos desde un archivo JSON (`gastos.json`).
+- Validación de datos de entrada para evitar errores.
 
-## 🧠 ¿Qué hace esta calculadora?
+## Uso
 
-La aplicación permite:
+1. Clona el repositorio o descarga el archivo `calculadora_gastos_v1.7.py`.
+2. Ejecuta el script en Python 3:
 
-1. Añadir nuevos gastos (categoría + importe)
-2. Guardar los gastos automáticamente en un archivo `gastos.json`
-3. Ver la lista completa de gastos introducidos
-4. Ver el total gastado
-5. Ver el gasto total por categoría
-6. Advertir si se ha superado un umbral (ej. 1000 €)
-7. Mantener los datos entre ejecuciones gracias a la persistencia con JSON
+```bash
+python calculadora_gastos_v1.7.py
 
-## Requisitos
-
-- Python 3.x instalado.
-
-## Autor
-
-Manuel García  
-[Mi perfil en GitHub](https://github.com/ManuelDes27)
-
----
-
-¡Gracias por usar este proyecto!
